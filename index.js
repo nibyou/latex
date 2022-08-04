@@ -214,4 +214,7 @@ function latex(src, options) {
   return outputStream
 }
 
-module.exports = latex
+exports["default"] = latex;
+// babel hack
+module.exports = exports["default"];
+module.exports.default = module.exports;
