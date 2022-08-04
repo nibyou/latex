@@ -1,4 +1,4 @@
-# node-latex
+# @nibyou/latex
 A small wrapper for generating PDFs with LaTeX in Node.
 
 ## Requirements
@@ -8,25 +8,25 @@ LaTeX must be installed on your machine.  You can download it [here](https://www
 ## Install
 
 ```
-npm install node-latex
+npm install @nibyou/latex
 ```
 
 ## Usage
 
-```js
-const latex = require('node-latex')
-const fs = require('fs')
+```typescript
+import latex from '@nibyou/latex';
+import * as fs from 'node:fs';
 
-const input = fs.createReadStream('input.tex')
-const output = fs.createWriteStream('output.pdf')
-const pdf = latex(input)
+const input = fs.createReadStream('input.tex');
+const output = fs.createWriteStream('output.pdf');
+const pdf = latex(input);
 
-pdf.pipe(output)
-pdf.on('error', err => console.error(err))
-pdf.on('finish', () => console.log('PDF generated!'))
+pdf.pipe(output);
+pdf.on('error', err => console.error(err));
+pdf.on('finish', () => console.log('PDF generated!'));
 ```
 
-View more examples [here](https://github.com/saadq/node-latex/tree/master/examples).
+View more examples [here](https://github.com/nibyou/latex/tree/master/examples).
 
 ## API
 
@@ -50,3 +50,5 @@ View more examples [here](https://github.com/saadq/node-latex/tree/master/exampl
 
 ## License
 MIT
+
+(Forked from [saadq/node-latex](https://github.com/saadq/node-latex))
